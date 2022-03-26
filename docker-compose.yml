@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  frps:
+    image: snowdreamtech/frps:0.37.1
+    container_name: frps
+    restart: always
+    network_mode: "host"
+    volumes:
+      - ./frp/frps.ini:/etc/frp/frps.ini:ro
+  node:
+    image: "node:16"
+    container_name: node
+    restart: always
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./node:/home/node/app
+    ports:
+      - "8081:8081"
+    command: "node index"
