@@ -5,4 +5,4 @@ WORKDIR /app
 COPY index.js .
 COPY token .
 CMD [ "node", "index.js"]
-EXPOSE 8082
+EXPOSE 8081
