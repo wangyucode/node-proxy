@@ -2,7 +2,7 @@ const fs = require('fs');
 const http = require('http');
 const https = require('https');
 
-const hostname = '127.0.0.1';
+const hostname = '0.0.0.0';
 const port = 8081;
 const token = fs.readFileSync('./token').toString();
 
